@@ -1,5 +1,5 @@
 # Gen
 
-Yet another static site generator. Written in C# .NET Core.
+A tiny C# .NET Core static site generator.
 
-Check out the demo site [here](https://e-wipond.github.io/Gen/).
+[See it in action](https://e-wipond.github.io/Gen/).
