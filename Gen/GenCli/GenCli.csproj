@@ -14,6 +14,7 @@
     <Authors>Ethan Wipond</Authors>
     <PackageTags>static site generator static-site-generator</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/e-wipond/Gen</RepositoryUrl>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
