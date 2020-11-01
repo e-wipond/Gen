@@ -27,6 +27,7 @@ jobs:
     - run: dotnet build Gen -c Release 
     - run: dotnet test Gen -c Release
     - run: dotnet pack Gen/GenCli -c Release
+    - run: dotnet nuget push Gen/GenCli/nupkg/*.nupkg
       if: github.event_name == 'push' && startswith(github.ref, 'refs/heads')
     - run: dotnet nuget push Gen/GenCli/nupkg/*.nupkg -k ${{secrets.NUGET_ORG_API_KEY}} -s https://api.nuget.org/v3/index.json
       if: github.event_name == 'push' && startswith(github.ref, 'refs/tags')
