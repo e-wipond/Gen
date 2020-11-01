@@ -1,15 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <ItemGroup>
-    <ProjectReference Include="..\GenLibrary\GenLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.0.0" />
-  </ItemGroup>
-
   <PropertyGroup>
-
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
 
@@ -17,6 +8,22 @@
     <ToolCommandName>gen</ToolCommandName>
     <PackageOutputPath>./nupkg</PackageOutputPath>
 
+    <PackageId>Gen</PackageId>
+    <PackageVersion>1.0.0-alpha.1</PackageVersion>
+    <Description>A .NET Core static site generator.</Description>
+    <Authors>Ethan Wipond</Authors>
+    <PackageTags>static site generator static-site-generator</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Nerdbank.GitVersioning" Version="3.3.37">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <ProjectReference Include="..\GenLibrary\GenLibrary.csproj" />
+    <PackageReference Include="McMaster.Extensions.CommandLineUtils" Version="3.0.0" />
+  </ItemGroup>
 
 </Project>

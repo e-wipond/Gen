@@ -1,28 +1,31 @@
 name: .NET Core
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches:
+      - master # CI (pr validation)
+  push:
+    branches:
+      - master # CI (ci package)
+    tags:
+      - v\\d+\\.\\d+ # CD (release package)
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
-    - name: Setup .NET Core
-      uses: actions/setup-dotnet@v1
+    - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.301
-    - name: Install dependencies
-      working-directory: Gen
-      run: dotnet restore
-    - name: Build
-      working-directory: Gen
-      run: dotnet build --configuration Release --no-restore
-    - name: Test
-      working-directory: Gen
-      run: dotnet test --no-restore --verbosity normal
+        source-url: https://nuget.pkg.github.com/e-wipond/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+    - run: dotnet build -c Release 
+    - run: dotnet test -c Release
+    - run: dotnet pack GenCli -c Release
+      if: github.event_name == 'push' && startswith(github.ref, 'refs/heads')
+    - run: dotnet nuget push GenCli/nupkg/*.nupkg -k ${{secrets.NUGET_ORG_API_KEY}} -s https://api.nuget.org/v3/index.json
+      if: github.event_name == 'push' && startswith(github.ref, 'refs/tags')
+
