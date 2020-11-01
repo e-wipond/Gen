@@ -22,10 +22,10 @@ jobs:
         source-url: https://nuget.pkg.github.com/e-wipond/index.json
       env:
         NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-    - run: dotnet build -c Release 
-    - run: dotnet test -c Release
-    - run: dotnet pack GenCli -c Release
+    - run: dotnet build Gen -c Release 
+    - run: dotnet test Gen -c Release
+    - run: dotnet pack Gen/GenCli -c Release
       if: github.event_name == 'push' && startswith(github.ref, 'refs/heads')
-    - run: dotnet nuget push GenCli/nupkg/*.nupkg -k ${{secrets.NUGET_ORG_API_KEY}} -s https://api.nuget.org/v3/index.json
+    - run: dotnet nuget push Gen/GenCli/nupkg/*.nupkg -k ${{secrets.NUGET_ORG_API_KEY}} -s https://api.nuget.org/v3/index.json
       if: github.event_name == 'push' && startswith(github.ref, 'refs/tags')
 
