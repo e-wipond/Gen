@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <title>First Sub Page - Gen</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html">Home</a> <span>></span> <a href="./index.html">Demo Page</a>
+
+<h1>First Sub Page</h1>
+
+See the source for this page <a href="#">here</a>.
+
+<p>Source files can have frontmatter that specifies additional information about how to render them in the generated site. The frontmatter is formatted as YAML in an HTML comment at the top of the file.</p>
+
+<p>This page and its siblings use a custom template called <code>_sub-page</code> that provides the navigation links, title, and source file link. The template is specified in the frontmatter like <code>template: _sub-page</code>. See the source of the template <a href="#">here</a>.</p>
+
+<p>The title heading is rendered via variable replacement. Define a variable in the frontmatter like <code>title: First Sub Page</code> and use it in a template like by wrapping it in double curly braces (<code>{{</code><code>title</code><code>}}</code>).</p>
+
+<p>Breadcrumb navigation can be inserted with <code>{{</code><code>breadcrumbs</code><code>}}</code> and creates links back to the site root.</p>
+
+<div style="display: flex; justify-content: space-between"><span>&nbsp;</span> <a href="second-sub-page.html" title="Second Sub Page">Next</a></div>
+    
+</body>
+</html>

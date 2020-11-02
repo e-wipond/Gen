@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <title>Third Sub Page - Gen</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<a href="../index.html">Home</a> <span>></span> <a href="./index.html">Demo Page</a>
+
+<h1>Third Sub Page</h1>
+
+See the source for this page <a href="#">here</a>.
+
+<p>Syntax highlighting is implemented for Scheme snippets.</p>
+
+<pre><code class="scheme"><span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">sqrt</span> x<span class="brace">)</span>
+  <span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">good-enough?</span> guess<span class="brace">)</span>
+    <span class="brace">(</span><span class="keyword">&lt;</span> <span class="brace">(</span>abs <span class="brace">(</span><span class="keyword">-</span> <span class="brace">(</span>square guess<span class="brace">)</span> x<span class="brace">)</span><span class="brace">)</span> <span class="nm">0.001</span><span class="brace">)</span><span class="brace">)</span>
+  <span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">improve</span> guess<span class="brace">)</span>
+    <span class="brace">(</span>average guess <span class="brace">(</span><span class="keyword">/</span> x guess<span class="brace">)</span><span class="brace">)</span><span class="brace">)</span>
+  <span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">sqrt-iter</span> guess<span class="brace">)</span>
+    <span class="brace">(</span><span class="keyword">if</span> <span class="brace">(</span>good-enough? guess<span class="brace">)</span>
+        guess
+        <span class="brace">(</span>sqrt-iter <span class="brace">(</span>improve guess<span class="brace">)</span><span class="brace">)</span><span class="brace">)</span><span class="brace">)</span>
+  <span class="brace">(</span>sqrt-iter <span class="nm">1.0</span><span class="brace">)</span><span class="brace">)</span></code></pre>
+
+<div style="display: flex; justify-content: space-between"><a href="second-sub-page.html" title="Second Sub Page">Previous</a> <span>&nbsp;</span></div>
+    
+</body>
+</html>

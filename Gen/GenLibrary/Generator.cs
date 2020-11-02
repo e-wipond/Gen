@@ -23,7 +23,7 @@ namespace GenLibrary
 
         private IList<IFileNode> pages = new List<IFileNode>();
 
-        private IList<string> fixedFiles = new List<string> { ".jpg", ".pdf" };
+        private IList<string> fixedFiles = new List<string> { ".jpg", ".pdf", ".png" };
 
         public Generator(IGenFS fileIO, string sourceDirectory, string outputDirectory)
         {
