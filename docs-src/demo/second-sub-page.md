@@ -3,7 +3,7 @@ title: "Second Sub Page"
 template: "_sub-page"
 prev: "First Sub Page"
 next: "Third Sub Page"
-source: "#"
+source: "https://github.com/e-wipond/Gen/blob/master/docs-src/demo/second-sub-page.md"
 -->
 
 'Prevous' and 'Next' links are automatically inserted at the bottom of a page if `prev` and `next` variables are present in the frontmatter.
