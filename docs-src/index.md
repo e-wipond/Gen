@@ -5,15 +5,15 @@ template: _page
 
 # Gen
 
-Yet another static site generator. Written in C# and .NET Core.
+A tiny C# .NET Core static site generator.
 
 ## Features
 
-- Templating
-- Variable replacement
-- Breadcrumb navigation
-- Next/Previous navigation
-- Markdown support
-- Blog post support
-- Partials in templates
-- Syntax highlighting (Scheme)
+- Templating and partials ([example](demo/first-sub-page.html))
+- Variable replacement ([example](demo/first-sub-page.html))
+- Breadcrumb navigation ([example](demo/first-sub-page.html))
+- Next/Previous navigation ([example](demo/second-sub-page.html))
+- Markdown support ([example](demo/second-sub-page.html))
+- Syntax highlighting (Scheme) ([example](demo/third-sub-page.html))
+
+Click the links above for a demo of each or start [here](demo/index.html).
