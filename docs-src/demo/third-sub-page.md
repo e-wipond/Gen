@@ -7,17 +7,10 @@ source: "https://github.com/e-wipond/Gen/blob/master/docs-src/demo/third-sub-pag
 
 Syntax highlighting is implemented for Scheme snippets.
 
+Source file code files can be inlined with `{{``inline filname.rkt``}}`.
+
 ```scheme
-(define (sqrt x)
-  (define (good-enough? guess)
-    (< (abs (- (square guess) x)) 0.001))
-  (define (improve guess)
-    (average guess (/ x guess)))
-  (define (sqrt-iter guess)
-    (if (good-enough? guess)
-        guess
-        (sqrt-iter (improve guess))))
-  (sqrt-iter 1.0))
+{{inline sqrt.rkt}}
 ```
 
 

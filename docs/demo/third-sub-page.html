@@ -18,7 +18,10 @@ See the source for this page <a href="https://github.com/e-wipond/Gen/blob/maste
 
 <p>Syntax highlighting is implemented for Scheme snippets.</p>
 
-<pre><code class="scheme"><span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">sqrt</span> x<span class="brace">)</span>
+<p>Source file code files can be inlined with <code>{{</code><code>inline filname.rkt</code><code>}}</code>.</p>
+
+<pre><code class="scheme">#lang sicp
+<span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">sqrt</span> x<span class="brace">)</span>
   <span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">good-enough?</span> guess<span class="brace">)</span>
     <span class="brace">(</span><span class="keyword">&lt;</span> <span class="brace">(</span>abs <span class="brace">(</span><span class="keyword">-</span> <span class="brace">(</span>square guess<span class="brace">)</span> x<span class="brace">)</span><span class="brace">)</span> <span class="nm">0.001</span><span class="brace">)</span><span class="brace">)</span>
   <span class="brace">(</span><span class="keyword">define</span> <span class="brace">(</span><span class="fn">improve</span> guess<span class="brace">)</span>
