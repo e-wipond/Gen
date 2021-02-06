@@ -6,6 +6,8 @@ namespace GenLibrary.Transformers
 {
     public class RenderPartialTransformer : IFileTransformer
     {
+        private const string pattern = @"{{render (?<title>.*)}}";
+
         private IList<IFileNode> partials;
 
         public RenderPartialTransformer(IList<IFileNode> partials)
@@ -19,8 +21,6 @@ namespace GenLibrary.Transformers
             {
                 return file;
             }
-
-            var pattern = @"{{render (?<title>.*)}}";
 
             var matches = Regex.Matches(file.Contents, pattern);
 
