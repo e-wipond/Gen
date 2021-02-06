@@ -153,10 +153,14 @@ namespace GenLibrary
 
             for (var i = 0; i < this.partials.Count; i++)
             {
+                Console.WriteLine(this.partials[i].Title);
+                if (this.partials[i].Title == "Exercise 1.1")
+                {
+                    Console.WriteLine(this.partials[i].Contents);
+                }
+
                 foreach (var transformer in this.transformers)
                 {
-                    Console.WriteLine(this.partials[i].Title);
-
                     this.partials[i] = transformer.Transform(this.partials[i]);
                 }
             }
