@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Text.RegularExpressions;
 
@@ -24,10 +25,14 @@ namespace GenLibrary.Transformers
                 return file;
             }
 
+            Console.WriteLine($"Matches: {matches.Count}");
+
             foreach (Match match in matches)
             {
                 var filename = match.Groups["filename"].Value;
                 var filepath = Path.Combine(sourceDirectory, file.RelativePath, filename);
+
+                Console.WriteLine(filepath);
 
                 if (fileIO.FileExists(filepath))
                 {
