@@ -22,7 +22,9 @@ namespace GenLibrary.Transformers
 
             if (file.Title == "Exercise 1.1")
             {
+                Console.WriteLine(file.IsPartial);
                 Console.WriteLine(file.Contents);
+                Console.WriteLine(file.RelativePath);
             }
 
             if (matches.Count == 0)

@@ -155,6 +155,11 @@ namespace GenLibrary
             {
                 foreach (var transformer in this.transformers)
                 {
+                    if (this.partials[i].Name == "Exercise 1.1")
+                    {
+                        Console.WriteLine(this.partials[i].Contents);
+                    }
+
                     this.partials[i] = transformer.Transform(this.partials[i]);
                 }
             }
