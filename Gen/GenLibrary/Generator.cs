@@ -38,8 +38,8 @@ namespace GenLibrary
 
             this.transformers = new List<IFileTransformer>
             {
-                new InlineFileTransformer(fileIO, sourceDirectory),
                 new RenderPartialTransformer(this.partials),
+                new InlineFileTransformer(fileIO, sourceDirectory),
                 new NextPreviousTransformer(),
                 new PostsIndexTransformer(this.pages),
                 new MarkdownTransformer(),
