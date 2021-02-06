@@ -20,6 +20,11 @@ namespace GenLibrary.Transformers
         {
             var matches = Regex.Matches(file.Contents, pattern);
 
+            if (file.Title == "Exercise 1.1")
+            {
+                Console.WriteLine(file.Contents);
+            }
+
             if (matches.Count == 0)
             {
                 return file;
