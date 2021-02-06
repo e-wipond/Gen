@@ -155,7 +155,7 @@ namespace GenLibrary
             {
                 foreach (var transformer in this.transformers)
                 {
-                    Console.WriteLine(this.partials[i].Name);
+                    Console.WriteLine(this.partials[i].Title);
 
                     this.partials[i] = transformer.Transform(this.partials[i]);
                 }
