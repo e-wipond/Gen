@@ -51,3 +51,7 @@ and find the .nupkg file in the `\Gen\GenCli\nupkg\` folder.
 ## To do
 
 - add support for inlining code files
+- logging
+- dependency injection 
+- performance tests
+- parallelize
