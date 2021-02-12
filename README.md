@@ -26,7 +26,7 @@ dotnet tool install --global Gen --version 1.0.0-alpha.1
 
 Create a `src` directory containing HTML and markdown files and run
 
-```python
+```bash
 gen .\src .\dist
 ```
 
@@ -34,6 +34,24 @@ The generated site will be output to the `dist` directory.
 
 See the `docs-src` directory for examples on use.
 
+## Package
+
+Run
+
+```bash
+dotnet pack .\Gen\
+```
+
+and find the .nupkg file in the `\Gen\GenCli\nupkg\` folder.
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## To do
+
+- add support for inlining code files
+- logging
+- dependency injection 
+- performance tests
+- parallelize

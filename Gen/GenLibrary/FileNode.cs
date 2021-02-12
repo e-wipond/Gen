@@ -136,7 +136,7 @@ namespace GenLibrary
 
                 this.Frontmatter = new Frontmatter(frontmatterString);
 
-                var sectionRegex = new Regex(@"#(?<name>\w+){{(?<contents>.*?)}}", RegexOptions.Singleline);
+                var sectionRegex = new Regex(@"#(?<name>\w+){{(?<contents>.*?)\n}}", RegexOptions.Singleline);
                 var sections = sectionRegex.Matches(this.Contents);
 
                 foreach (Match m in sections)
