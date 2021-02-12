@@ -39,11 +39,11 @@ namespace GenLibrary
             this.transformers = new List<IFileTransformer>
             {
                 new RenderPartialTransformer(this.partials),
+                new InlineFileTransformer(fileIO, sourceDirectory),
                 new NextPreviousTransformer(),
                 new PostsIndexTransformer(this.pages),
                 new MarkdownTransformer(),
                 new TemplateTransformer(this.templates),
-                new InlineFileTransformer(fileIO, sourceDirectory),
                 new KeyTagTransformer(),
                 new RelativeRootTagTransformer(),
                 new BreadcrumbTagTransformer(),
@@ -153,12 +153,6 @@ namespace GenLibrary
 
             for (var i = 0; i < this.partials.Count; i++)
             {
-                Console.WriteLine(this.partials[i].Title);
-                if (this.partials[i].Title == "Exercise 1.1")
-                {
-                    Console.WriteLine(this.partials[i].Contents);
-                }
-
                 foreach (var transformer in this.transformers)
                 {
                     this.partials[i] = transformer.Transform(this.partials[i]);

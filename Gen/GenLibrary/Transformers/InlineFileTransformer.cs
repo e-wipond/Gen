@@ -20,26 +20,15 @@ namespace GenLibrary.Transformers
         {
             var matches = Regex.Matches(file.Contents, pattern);
 
-            if (file.Title == "Exercise 1.1")
-            {
-                Console.WriteLine(file.IsPartial);
-                Console.WriteLine(file.Contents);
-                Console.WriteLine(file.RelativePath);
-            }
-
             if (matches.Count == 0)
             {
                 return file;
             }
 
-            Console.WriteLine($"Matches: {matches.Count}");
-
             foreach (Match match in matches)
             {
                 var filename = match.Groups["filename"].Value;
                 var filepath = Path.Combine(sourceDirectory, file.RelativePath, filename);
-
-                Console.WriteLine(filepath);
 
                 if (fileIO.FileExists(filepath))
                 {
